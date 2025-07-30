@@ -109,7 +109,7 @@ prebuit_button.pack()
 loadDeck.mainloop()
 #---------------------------------------------------------------------------------------------------------------------------------
 # GUI code
-print(baseDeck)
+
 for x in range(len(baseDeck)):
     try:
         showCard(baseDeck[x])
