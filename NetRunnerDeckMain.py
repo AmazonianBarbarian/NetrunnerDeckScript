@@ -94,13 +94,13 @@ submit_button = tk.Button(loadDeck, # Meant to submit the info entered into the 
                         command = submit)
 submit_button.pack()
 
-close_button = tk.Button(loadDeck, # Meant to submit the info entered into the fields above.
+close_button = tk.Button(loadDeck, # Meant to close the window.
                         text="Close", 
                         font=('Arial', 18), 
                         command = loadDeck.destroy)
 close_button.pack()
 
-prebuit_button = tk.Button(loadDeck, # Meant to submit the info entered into the fields above.
+prebuit_button = tk.Button(loadDeck, # Meant to submit to the array from a text file.
                         text="From Decklist", 
                         font=('Arial', 18), 
                         command = deckList)
