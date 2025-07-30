@@ -13,9 +13,7 @@ def showCard(cardName):
             cardSize = img.resize(size)
             cardSize.show()
 
-
-
-baseDeck = [ "See Ya", 'Worm', 'Vrizzbolt', 'Armor', 'Sword', 'Deckkrash', 'Shield']
+baseDeck = [ '', '', '', '', '', '', '']
 
 # GUI code
 #---------------------------------------------------------------------------------------------------------------------------------
@@ -55,7 +53,7 @@ def submit(): # For placing input into the baseDeck array variable.
 
         print(f'{deckInput}, {deckInput2}, {deckInput3}, {deckInput4}, {deckInput5}, {deckInput6}, {deckInput7}')
 
-def deckList(): # pulls list Cyberdeck loadout from a text file called deckList.txt and places it within the baseDeck Array
+def deckList():
       premadeDeck = open('deckList.txt', 'r')
       i = 0
       for line in premadeDeck:
@@ -89,22 +87,22 @@ deckEntry7 = tk.Entry(loadDeck, textvariable=deck_var7)
 deckEntry7.pack(pady=20)
 
 submit_button = tk.Button(loadDeck, # Meant to submit the info entered into the fields above.
-                        text="Submit", 
+                        text="Submit from Fields", 
                         font=('Arial', 18), 
                         command = submit)
 submit_button.pack()
 
-close_button = tk.Button(loadDeck, # Meant to close the window.
-                        text="Close", 
-                        font=('Arial', 18), 
-                        command = loadDeck.destroy)
-close_button.pack()
-
-prebuit_button = tk.Button(loadDeck, # Meant to submit to the array from a text file.
-                        text="From Decklist", 
+prebuit_button = tk.Button(loadDeck, # Meant to add to the array from a deck list.
+                        text="Load from Decklist", 
                         font=('Arial', 18), 
                         command = deckList)
 prebuit_button.pack()
+
+close_button = tk.Button(loadDeck, # Meant to close the GUI after Submitting.
+                        text="Close after loading Deck", 
+                        font=('Arial', 18), 
+                        command = loadDeck.destroy)
+close_button.pack()
 
 loadDeck.mainloop()
 #---------------------------------------------------------------------------------------------------------------------------------
@@ -114,4 +112,6 @@ for x in range(len(baseDeck)):
     try:
         showCard(baseDeck[x])
     except:
+         print(f"Potential Error: Card {baseDeck[x]}.png at postition {x + 1} not found or left empty! Did you type it in correctly?")
+         # Position is based on the Card number, ex: 5th ot 6th card, not the position in the Array.
          continue #If the Card is not found then it will just continue so the next one.
