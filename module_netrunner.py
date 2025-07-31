@@ -4,21 +4,7 @@ from PIL import Image
 import tkinter as tk
 
 baseDeck = [ '', '', '', '', '', '', '']
-
-def showCard(cardName):
-        with Image.open(f"Netrunning Deck v2 Individual PNGs/{cardName}.png") as img:
-            size = (206, 281)
-            cardSize = img.resize(size)
-            cardSize.show()
-
-def deckList():
-      with open('deckList.txt', 'r') as premadeDeck:
-        i = 0
-        for line in premadeDeck:
-              baseDeck[i] = line.strip()
-              i = i + 1
-      
-      print(baseDeck)
+deckLoadout = ""
 
 loadDeck = tk.Tk() # This object it meant to open a GUI element to input a deck list rather than hard coding it.
 loadDeck.title("Please Select Cyberdeck loadout")
@@ -31,6 +17,28 @@ deck_var4 = tk.StringVar()
 deck_var5 = tk.StringVar()
 deck_var6 = tk.StringVar()
 deck_var7 = tk.StringVar()
+deckSubmit_var = tk.StringVar()
+
+def showCard(cardName):
+        with Image.open(f"Netrunning Deck v2 Individual PNGs/{cardName}.png") as img:
+            size = (206, 281)
+            cardSize = img.resize(size)
+            cardSize.show()
+
+def deckList():
+      deckListInput=deckSubmit_var.get() # This block sets the deck Loadout variable.
+      deckLoadout = f'{deckListInput}.txt'
+      print(deckLoadout)
+
+      with open(deckLoadout, 'r') as premadeDeck: # This block loads the Array from the txt file.
+        i = 0
+        for line in premadeDeck:
+              baseDeck[i] = line.strip()
+              i = i + 1
+
+
+      print(baseDeck)
+
 
 def submit(): # For placing input into the baseDeck array variable.
         deckInput=deck_var.get()
