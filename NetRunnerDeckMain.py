@@ -9,7 +9,7 @@ import module_netrunner as mod
 #Needs to show in a specific size so it doesn't fill the screen.
 
 
-# GUI latout code
+# GUI layout code
 #---------------------------------------------------------------------------------------------------------------------------------
 
 deckEntry = tk.Entry(mod.loadDeck, textvariable=mod.deck_var)
@@ -58,7 +58,7 @@ close_button.pack(pady=10)
 
 mod.loadDeck.mainloop()
 #---------------------------------------------------------------------------------------------------------------------------------
-# GUI code
+# GUI layout code
 
 for x in range(len(mod.baseDeck)):
     try:
