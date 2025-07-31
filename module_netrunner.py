@@ -1,3 +1,5 @@
+# This module is meant to be used with the NetRunnerDeckMain.py script.
+
 from PIL import Image
 import tkinter as tk
 
