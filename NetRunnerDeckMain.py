@@ -13,43 +13,48 @@ import module_netrunner as mod
 #---------------------------------------------------------------------------------------------------------------------------------
 
 deckEntry = tk.Entry(mod.loadDeck, textvariable=mod.deck_var)
-deckEntry.pack(pady=20) # "pady={someNumber}" places the text field lower vertically in the window.
+deckEntry.pack(pady=10) # "pady={someNumber}" places the text field lower vertically in the window.
 
 deckEntry2 = tk.Entry(mod.loadDeck, textvariable=mod.deck_var2)
-deckEntry2.pack(pady=20)
+deckEntry2.pack(pady=10)
 
 deckEntry3 = tk.Entry(mod.loadDeck, textvariable=mod.deck_var3)
-deckEntry3.pack(pady=20)
+deckEntry3.pack(pady=10)
 
 deckEntry4 = tk.Entry(mod.loadDeck, textvariable=mod.deck_var4)
-deckEntry4.pack(pady=20)
+deckEntry4.pack(pady=10)
 
 deckEntry5 = tk.Entry(mod.loadDeck, textvariable=mod.deck_var5)
-deckEntry5.pack(pady=20)
+deckEntry5.pack(pady=10)
 
 deckEntry6 = tk.Entry(mod.loadDeck, textvariable=mod.deck_var6)
-deckEntry6.pack(pady=20)
+deckEntry6.pack(pady=10)
 
 deckEntry7 = tk.Entry(mod.loadDeck, textvariable=mod.deck_var7)
-deckEntry7.pack(pady=20)
+deckEntry7.pack(pady=10)
+
+deckListEntry = tk.Entry(mod.loadDeck, textvariable=mod.deckSubmit_var)
 
 submit_button = tk.Button(mod.loadDeck, # Meant to submit the info entered into the fields above.
-                        text="Submit from Fields", 
+                        text="Enter and Load from Fields", 
                         font=('Arial', 18), 
                         command = mod.submit)
 submit_button.pack()
 
+deckListEntry.pack(pady=10) #Field for entering the deck list text file.
+
 prebuit_button = tk.Button(mod.loadDeck, # Meant to add to the array from a deck list.
-                        text="Load from Decklist", 
+                        text="Enter and Load from Decklist", 
                         font=('Arial', 18), 
                         command = mod.deckList)
 prebuit_button.pack()
+
 
 close_button = tk.Button(mod.loadDeck, # Meant to close the GUI after Submitting.
                         text="Close after loading Deck", 
                         font=('Arial', 18), 
                         command = mod.loadDeck.destroy)
-close_button.pack()
+close_button.pack(pady=10)
 
 mod.loadDeck.mainloop()
 #---------------------------------------------------------------------------------------------------------------------------------
